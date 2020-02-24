@@ -21,7 +21,7 @@ public class Main {
             System.out.println("Ну хотя бы одной длины");
         } else {
             System.out.println("Они совсем разные");
-            // write your code here
+
         }
 
     }
