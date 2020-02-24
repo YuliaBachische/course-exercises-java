@@ -7,9 +7,9 @@ public class Excercise7 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число: ");
         int num = sc.nextInt();
-        int mul = 1;
+        int mul = 1; //long
         for(int i = 1; i <= num; i++){
-            mul *= i;
+            mul *= i; 
         }
         System.out.println("Факториал числа: ");
         System.out.println(mul);
