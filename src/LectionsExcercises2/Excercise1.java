@@ -1,6 +1,6 @@
 package LectionsExcercises2;
 
-public class Excercise1 {
+public class Exercise1 {
     public static void main(String[]args){
         int[] array = new int[5];
         array[0] = 8;
