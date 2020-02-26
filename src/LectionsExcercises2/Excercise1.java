@@ -15,7 +15,7 @@ public class Exercise1 {
         int[] array2 = new int[5];
         for(int i = 0; i < array2.length; i++){
                 array2[4-i] = array[i];
-            }
+        }
         System.out.println("Обратный порядок: ");
         for(int i = 0; i < array2.length; i++){
             System.out.println(array2[i]);
