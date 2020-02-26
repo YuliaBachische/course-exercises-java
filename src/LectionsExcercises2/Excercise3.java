@@ -5,6 +5,7 @@ import java.util.Random;
 public class Excercise3 {
     public static void main(String[] args) {
         int sum = 0;
+        int count = 0;
         double[] array = new double[10];
         for (int i = 0; i < array.length; i++) {
             array[i] = nextDouble();
@@ -34,6 +35,7 @@ public class Excercise3 {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
             sum += array[i];
+            count += 1;
         }
         double averageDouble = sum/2;
         System.out.println("Минимальное значение: " + " " + minDouble);
