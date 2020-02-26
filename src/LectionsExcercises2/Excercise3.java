@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Excercise3 {
     public static void main(String[] args) {
+        int sum = 0;
         double[] array = new double[10];
         for (int i = 0; i < array.length; i++) {
             array[i] = nextDouble();
@@ -32,8 +33,9 @@ public class Excercise3 {
         System.out.println("Сортировка: ");
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
+            sum += array[i];
         }
-        double averageDouble = (maxDouble - minDouble)/2;
+        double averageDouble = sum/2;
         System.out.println("Минимальное значение: " + " " + minDouble);
         System.out.println("Максимальное значение: " + " " + maxDouble);
         System.out.println("Среднее значение: " + " " + averageDouble);
