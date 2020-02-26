@@ -37,7 +37,7 @@ public class Excercise3 {
             sum += array[i];
             count += 1;
         }
-        double averageDouble = sum/2;
+        double averageDouble = sum/count;
         System.out.println("Минимальное значение: " + " " + minDouble);
         System.out.println("Максимальное значение: " + " " + maxDouble);
         System.out.println("Среднее значение: " + " " + averageDouble);
