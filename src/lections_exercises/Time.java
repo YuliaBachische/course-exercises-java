@@ -5,7 +5,7 @@ public class Time {
         public static int min;
         public static int hour;
         public static void main(String[]args) {
-            Time sec = new lections_exercises.Time(500);
+            Time sec = new Time(500);
             sec.showTime();
         }
         public static void showTime() {
