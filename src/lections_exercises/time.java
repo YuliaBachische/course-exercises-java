@@ -13,7 +13,7 @@ public class time {
             time.sec %= 60;
             time.hour = min/60;
             if(sec<=0){
-                System.out.println("0");
+                System.out.println(0);
             }
             if(min>=60) {
                 min = min - hour * 60;
