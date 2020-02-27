@@ -1,6 +1,6 @@
 package LectionsExcercises2;
 
-public class Excercise1 {
+public class Exercise1 {
     public static void main(String[]args){
         int[] array = new int[5];
         array[0] = 8;
@@ -15,7 +15,7 @@ public class Excercise1 {
         int[] array2 = new int[5];
         for(int i = 0; i < array2.length; i++){
                 array2[4-i] = array[i];
-            }
+        }
         System.out.println("Обратный порядок: ");
         for(int i = 0; i < array2.length; i++){
             System.out.println(array2[i]);
