@@ -1,32 +1,32 @@
 package lections_exercises;
 
-public class Time {
+public class time {
         public static int sec;
         public static int min;
         public static int hour;
         public static void main(String[]args) {
-            Time sec = new lections_exercises.Time(500);
+            time sec = new time(500);
             sec.showTime();
         }
         public static void showTime() {
-            Time.min = sec/60;
-            Time.sec %= 60;
-            Time.hour = min/60;
+            time.min = sec/60;
+            time.sec %= 60;
+            time.hour = min/60;
             if(min>=60) {
                 min = min - hour * 60;
             }
             System.out.println("Часы: " + hour + " " + " Минуты: " + min + " " + " " + "Секунды: " + sec);
         }
-        public Time (int sec){
+        public time (int sec){
             this.sec = sec;
         }
         public static void showSec(){
-            Time.min = min*60;
-            Time.hour = hour*3600;
-            Time.sec = sec;
+            time.min = min*60;
+            time.hour = hour*3600;
+            time.sec = sec;
             System.out.println(min + hour + sec);
         }
-        public Time(int sec, int min, int hour){
+        public time(int sec, int min, int hour){
             this.min = min;
             this.hour = hour;
             this.sec = sec;
