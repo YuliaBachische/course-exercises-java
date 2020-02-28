@@ -9,19 +9,19 @@ package LE2.lections_exercises2;
 количеством купюр какого номинала выдаётся сумма.
 Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
  */
-public class Bank { // класс, описывающий банкомат.
-    public boolean sum;
-    public int money;
-    public int money20;
-    public int money50;
-    public int money100;
+ class Bank { // класс, описывающий банкомат.
+     boolean sum;
+     int money;
+     int money20;
+     int money50;
+     int money100;
     public static void main(String[]args){     //вывод на консоль
         Bank first = new Bank( 6, 45, 2);
         first.giveMoney();
         Bank second = new Bank(5000);
         second.getMoney();
     }
-    public Bank(int money){       //конструктор с тремя параметрами - количеством купюр каждого номинала.
+     Bank(int money){       //конструктор с тремя параметрами - количеством купюр каждого номинала.
         int div100 = money%100;
         int div50 = money%100;
         int div20 = money%50;
@@ -37,7 +37,7 @@ public class Bank { // класс, описывающий банкомат.
             }
             this.money = this.money100*100 + this.money50*50 + this.money20*20;
         }
-    public void getMoney() {//каким количеством купюр какого номинала выдаётся сумма
+     void getMoney() {//каким количеством купюр какого номинала выдаётся сумма
             System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - "+ money50+
                     "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
             /* Функция, снимающая деньги, которая принимает сумму денег, а возвращает булевое значение -
@@ -49,13 +49,13 @@ public class Bank { // класс, описывающий банкомат.
             System.out.println("Ошибка выполнения");
         }
     }
-    public Bank(int money20, int money50, int money100){
+     Bank(int money20, int money50, int money100){
             money20 = money20 * 20;
             money50 = money50*50;
             money100= money100*100;
             money = money20 + money50 + money100; //преобразование в сумму добавленных в банкомат денег
     }
-    public void giveMoney(){        //метод для добавления денег в банкомат
+     void giveMoney(){        //метод для добавления денег в банкомат
         System.out.println("Операция выполнена успешно. Сумма вклада:" + money);
     }
 }
