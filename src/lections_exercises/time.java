@@ -1,27 +1,28 @@
 package lections_exercises;
 
-public class time {
-    public  int sec;
-    public  int min;
-    public  int hour;
+public class Time {
+    public int sec;
+    public int min;
+    public int hour;
     public static void main(String[]args) {
-        time sec = new time(5557);
-        sec.showTime();
+        Time sec = new Time(8, 8, 8);
+        sec.showSec();
     }
     public  void showTime() {
             System.out.println("Часы: " + hour + " " + " Минуты: " + min + " " + " " + "Секунды: " + sec);
         }
-    }
-    public time (int sec, int min, int hour){
+
+    public Time(int sec, int min, int hour){
         this.min = sec/60;
-        this.sec %= 60;
         this.hour = min/60;
-        
+        this.sec = sec;
+        this.min = min*60;
+        this.hour = hour*3600;
     }
     public void showSec(){
         System.out.println(min + hour + sec);
     }
-    public time(int sec){
+    public Time(int sec){
         this.min = sec/60;
         this.sec %= 60;
         this.hour = min/60;
@@ -30,7 +31,7 @@ public class time {
         }
         if(min>=60) {
             min = min - hour * 60;
-
+        }
     }
 }
 
