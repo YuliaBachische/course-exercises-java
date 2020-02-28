@@ -12,7 +12,7 @@ public class time {
             System.out.println("Часы: " + hour + " " + " Минуты: " + min + " " + " " + "Секунды: " + sec);
         }
     }
-    public time (int sec, but min, isn't hour){
+    public time (int sec, int min, int hour){
         this.min = sec/60;
         this.sec %= 60;
         this.hour = min/60;
