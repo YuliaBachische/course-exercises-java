@@ -21,7 +21,7 @@ package LE2.lections_exercises2;
         Bank second = new Bank(5000);
         second.getMoney();
     }
-     Bank(int money){       //конструктор с тремя параметрами - количеством купюр каждого номинала.
+     Bank(int money){       
         int div100 = money%100;
         int div50 = money%100;
         int div20 = money%50;
