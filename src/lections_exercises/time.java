@@ -9,6 +9,19 @@ public class time {
         sec.showTime();
     }
     public  void showTime() {
+            System.out.println("Часы: " + hour + " " + " Минуты: " + min + " " + " " + "Секунды: " + sec);
+        }
+    }
+    public time (int sec, but min, isn't hour){
+        this.min = sec/60;
+        this.sec %= 60;
+        this.hour = min/60;
+        
+    }
+    public void showSec(){
+        System.out.println(min + hour + sec);
+    }
+    public time(int sec){
         this.min = sec/60;
         this.sec %= 60;
         this.hour = min/60;
@@ -17,21 +30,7 @@ public class time {
         }
         if(min>=60) {
             min = min - hour * 60;
-            System.out.println("Часы: " + hour + " " + " Минуты: " + min + " " + " " + "Секунды: " + sec);
-        }
-    }
-    public time (int sec){
-        this.sec = sec;
-    }
-    public void showSec(){
-        this.min = min*60;
-        this.hour = hour*3600;
-        System.out.println(min + hour + sec);
-    }
-    public time(int sec, int min, int hour){
-        this.min = min;
-        this.hour = hour;
-        this.sec = sec;
+
     }
 }
 
