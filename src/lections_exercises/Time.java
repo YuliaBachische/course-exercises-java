@@ -9,8 +9,8 @@ public class Time {
         sec.showSec();
     }
     public  void showTime() {
-            System.out.println("Часы: " + hour + " " + " Минуты: " + min + " " + " " + "Секунды: " + sec);
-        }
+        System.out.println("Часы: " + hour + " " + " Минуты: " + min + " " + " " + "Секунды: " + sec);
+    }
 
     public Time(int sec, int min, int hour){
         this.min = sec/60;
@@ -34,5 +34,3 @@ public class Time {
         }
     }
 }
-
-
