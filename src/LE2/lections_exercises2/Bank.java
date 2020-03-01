@@ -18,10 +18,10 @@ package LE2.lections_exercises2;
     public static void main(String[]args){     //вывод на консоль
         Bank first = new Bank( 6, 45, 2);
         first.giveMoney();
-        Bank second = new Bank(5000);
+        Bank second = new Bank(70);
         second.getMoney();
     }
-     Bank(int money){       
+     Bank(int money){
         int div100 = money%100;
         int div50 = money%100;
         int div20 = money%50;
@@ -34,20 +34,27 @@ package LE2.lections_exercises2;
                 this.money100 = money / 100;
                 this.money50 = div100/50;
                 this.money20 = (div100%50)/20;
-            }
+            } else{
+                System.out.println(" ");
+         }
             this.money = this.money100*100 + this.money50*50 + this.money20*20;
         }
      void getMoney() {//каким количеством купюр какого номинала выдаётся сумма
-            System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - "+ money50+
-                    "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
+
             /* Функция, снимающая деньги, которая принимает сумму денег, а возвращает булевое значение -
           успешность выполнения операции.*/
-        sum = money - money100*100 - money50*50 -money20*20 ==0;
-            if(sum){
-                System.out.println("Операция выполнена успешно");
-            } else {
-            System.out.println("Ошибка выполнения");
-        }
+            if(money!= 0) {
+                sum = money - money100 * 100 - money50 * 50 - money20 * 20 == 0;
+                if (sum) {
+                    System.out.println("Операция выполнена успешно");
+                    System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - " + money50 +
+                            "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
+                } else {
+                    System.out.println("Ошибка выполнения");
+                }
+            } else{
+                System.out.println("Ошибка выполнения");
+            }
     }
      Bank(int money20, int money50, int money100){
             money20 = money20 * 20;
