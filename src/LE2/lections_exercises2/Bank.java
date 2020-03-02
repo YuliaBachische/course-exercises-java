@@ -23,8 +23,7 @@
     }
      Bank(int money,int money20, int money50, int money100){
 
-         sum = (((this.money20>=money20)||(money20!=0))&& (this.money50>=money50||(money50!=0))&&((this.money100>=money100)||
-                 (money100!=0))&&(money%10 ==0));
+         sum = (((this.money20>=money20))&& (this.money50>=money50)&&(this.money100>=money100)&&(money%10 ==0));
         if(sum){
             this.money20 -= money20;
             this.money50-= money50;
