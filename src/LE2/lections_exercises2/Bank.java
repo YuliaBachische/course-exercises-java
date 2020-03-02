@@ -39,7 +39,7 @@
          this.money20+=money20;
          this.money50 += money50;
          this.money100 += money100;
-        System.out.println("В банке на данный момент хранится: купюр 20 рублей - " + this.money20 + "; " +
+        System.out.println("В банкoмате на данный момент хранится: купюр 20 рублей - " + this.money20 + "; " +
                 "Купюр 50 рублей - " + this.money50 + "; " + "Купюр 100 рублей - " + this.money100 + ".");
     }
      void getMoney() {
