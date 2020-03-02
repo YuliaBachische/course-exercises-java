@@ -10,9 +10,9 @@
  */
  class Bank { 
      boolean sum;
-     public int money20 = 100;
-     public int money50 = 100;
-     public int money100 = 100;
+     int money20 = 100;
+     int money50 = 100;
+     int money100 = 100;
      public static void main(String[]args){    
          Bank firstOper = new Bank(4, 6, 10);
          firstOper.giveMoney();
