@@ -1,4 +1,3 @@
-package LE2.lections_exercises2;
 /*
 Создать класс, описывающий банкомат.
 Набор купюр, находящихся в банкомате должен задаваться тремя свойствами:
@@ -9,53 +8,88 @@ package LE2.lections_exercises2;
 количеством купюр какого номинала выдаётся сумма.
 Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
  */
- class Bank { // класс, описывающий банкомат.
-     boolean sum;
-     int money;
-     int money20;
-     int money50;
-     int money100;
-    public static void main(String[]args){     //вывод на консоль
-        Bank first = new Bank( 6, 45, 2);
-        first.giveMoney();
-        Bank second = new Bank(5000);
-        second.getMoney();
-    }
-     Bank(int money){       //конструктор с тремя параметрами - количеством купюр каждого номинала.
-        int div100 = money%100;
-        int div50 = money%100;
-        int div20 = money%50;
-            if (div100 == 0) {
-                this.money100 = money / 100;
-            } if ((div100 != 0) && (div50 == 0)) {
-                this.money100 = money / 100;
-                this.money50 = div100 / 50;
-            } if ((div100 != 0) && (div50 != 0) && (div20%2 == 0)) {
-                this.money100 = money / 100;
-                this.money50 = div100/50;
-                this.money20 = (div100%50)/20;
+package LE2.lections_exercises2;
+import java.util.Scanner;
+
+class Bank {
+    static int money20 = 100;
+    static int money50 = 100;
+    static int money100 = 100;
+    public static void main(String[]args){
+        int numOperation =3;
+        do {
+            System.out.println("Выберите действие " + "\n" + "1. Снять деньги " + "\n" + "2. Положить деньги" + 
+                    "\n" + "3. Выход из банка");
+            Scanner scanner = new Scanner(System.in);
+            numOperation = scanner.nextInt();
+            switch (numOperation) {
+                case 1:
+                    System.out.println("Сколько вы хотите снять?");
+                    int numGetMoney = scanner.nextInt();
+                    Bank.fromBank(numGetMoney);
+                    break;
+                case 2:
+                    System.out.println("Сколько вы хотите положить купюр по 20 рублей?");
+                    int numToBank20 = scanner.nextInt();
+                    System.out.println("Сколько вы хотите положить купюр по 50 рублей?");
+                    int numToBank50 = scanner.nextInt();
+                    System.out.println("Сколько вы хотите положить купюр по 100 рублей?");
+                    int numToBank100 = scanner.nextInt();
+                    Bank.toBank(numToBank20, numToBank50, numToBank100);
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("Ошибка. Выберите один из существующих вариантов.");
             }
-            this.money = this.money100*100 + this.money50*50 + this.money20*20;
-        }
-     void getMoney() {//каким количеством купюр какого номинала выдаётся сумма
-            System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - "+ money50+
-                    "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
-            /* Функция, снимающая деньги, которая принимает сумму денег, а возвращает булевое значение -
-          успешность выполнения операции.*/
-        sum = money - money100*100 - money50*50 -money20*20 ==0;
-            if(sum){
+        }while(numOperation!=3);
+    }
+    static void fromBank(int money){
+        int sumBank = Bank.money20 * 20 + Bank.money50 * 50 + Bank.money100 * 100;
+        boolean check = (((money%10 == 0)&&((money%20 == 0)|| (money%50==0)||(money%100==0))));
+        if ((money>sumBank)|| (!check)) {
+            System.out.println("Ошибка. Выберите другую сумму");
+        } else {
+            int money100 = money / 100;
+            if (money100 > Bank.money100) {
+                int money50 = (money % 100)/50;
+                money50 += (money100 - Bank.money100) * 2;
+                int money20 = (((money % 100) % 50) / 20);
+                if(((money50>Bank.money50)||(money50<Bank.money50))&&(money20%20==0)){
+                    money20 += (((money50 - Bank.money50)*50)/20);
+                    money50 = Bank.money50;
+                    money100 = Bank.money100;
+                    Bank.money20 -= money20;
+                    Bank.money50 -= money50;
+                    Bank.money100 -= money100;
+                    System.out.println("Операция выполнена успешно");
+                    System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - " + money50 +
+                            "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
+                    System.out.println("В банке осталось - " + (Bank.money20*20 + Bank.money50*50 + Bank.money100*100));
+                }else{
+                    System.out.println("Ошибка выполнения");
+                }
+            }else{
+                int money50 = (money % 100)/50;
+                int money20 = (((money % 100) % 50) / 20);
+                Bank.money20 -= money20;
+                Bank.money50 -= money50;
+                Bank.money100 -= money100;
                 System.out.println("Операция выполнена успешно");
-            } else {
-            System.out.println("Ошибка выполнения");
+                System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - " + money50 +
+                        "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
+                System.out.println("В банке осталось - " + (Bank.money20*20 + Bank.money50*50 + Bank.money100*100));
+            }
         }
     }
-     Bank(int money20, int money50, int money100){
-            money20 = money20 * 20;
-            money50 = money50*50;
-            money100= money100*100;
-            money = money20 + money50 + money100; //преобразование в сумму добавленных в банкомат денег
+    static  void toBank(int money20, int money50, int money100){
+        Bank.money20 +=money20;
+        Bank.money50 += money50;
+        Bank.money100 += money100;
+        System.out.println("В банкoмате на данный момент хранится: купюр 20 рублей - " + Bank.money20 + "; " +
+                "Купюр 50 рублей - " + Bank.money50 + "; " + "Купюр 100 рублей - " + Bank.money100 + ".");
+        System.out.println("В банке осталось - " + (Bank.money20*20 + Bank.money50*50 + Bank.money100*100));
     }
-     void giveMoney(){        //метод для добавления денег в банкомат
-        System.out.println("Операция выполнена успешно. Сумма вклада:" + money);
+    Bank() {
     }
 }
