@@ -6,7 +6,6 @@ public class MyClass {
     int b;
     BigDecimal s;
     BigDecimal t;
-
     public MyClass(int a, int b){
         this.a = a;
         this.b = b;
@@ -23,14 +22,8 @@ public class MyClass {
         BigDecimal mul = s.multiply(t);
         return mul;
     }
-
     public static void main(String[] args) {
         MyClass d = new MyClass(BigDecimal.valueOf(823.49), BigDecimal.valueOf(9.238));
         System.out.println(d.MyCls());
-
-
-
-
-
     }
 }
