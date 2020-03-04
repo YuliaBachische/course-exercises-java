@@ -9,7 +9,7 @@
 Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
  */
 package LE2.lections_exercises2;
-import java.util.Scanner;
+        import java.util.Scanner;
 
 class Bank {
     static int money20 = 100;
@@ -18,7 +18,7 @@ class Bank {
     public static void main(String[]args){
         int numOperation =3;
         do {
-            System.out.println("Выберите действие " + "\n" + "1. Снять деньги " + "\n" + "2. Положить деньги" + 
+            System.out.println("Выберите действие " + "\n" + "1. Снять деньги " + "\n" + "2. Положить деньги" +
                     "\n" + "3. Выход из банка");
             Scanner scanner = new Scanner(System.in);
             numOperation = scanner.nextInt();
@@ -46,7 +46,7 @@ class Bank {
     }
     static void fromBank(int money){
         int sumBank = Bank.money20 * 20 + Bank.money50 * 50 + Bank.money100 * 100;
-        boolean check = (((money%10 == 0)&&((money%20 == 0)|| (money%50==0)||(money%100==0))));
+        boolean check = (((money%10 == 0)||((money%20 == 0)|| (money%50==0)||(money%100==0))));
         if ((money>sumBank)|| (!check)) {
             System.out.println("Ошибка. Выберите другую сумму");
         } else {
@@ -69,16 +69,38 @@ class Bank {
                 }else{
                     System.out.println("Ошибка выполнения");
                 }
-            }else{
-                int money50 = (money % 100)/50;
-                int money20 = (((money % 100) % 50) / 20);
-                Bank.money20 -= money20;
-                Bank.money50 -= money50;
-                Bank.money100 -= money100;
-                System.out.println("Операция выполнена успешно");
-                System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - " + money50 +
-                        "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
-                System.out.println("В банке осталось - " + (Bank.money20*20 + Bank.money50*50 + Bank.money100*100));
+            }else {
+                int money50 = (money % 100) / 50;
+                if(((money % 100)% 50)/20!=0){
+                    int money20 = ((money%100)%50)/20;
+                    if(money - money100*100 - money50*50 - money20*20!=0){
+                        money50 = 0;
+                        Bank.money20 -= money20;
+                        Bank.money50 -= money50;
+                        Bank.money100 -= money100;
+                        System.out.println("Операция выполнена успешно");
+                        System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - " + money50 +
+                                "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
+                        System.out.println("В банке осталось - " + (Bank.money20 * 20 + Bank.money50 * 50 + Bank.money100 * 100));
+                    } else {
+                        Bank.money20 -= money20;
+                        Bank.money50 -= money50;
+                        Bank.money100 -= money100;
+                        System.out.println("Операция выполнена успешно");
+                        System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - " + money50 +
+                                "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
+                        System.out.println("В банке осталось - " + (Bank.money20 * 20 + Bank.money50 * 50 + Bank.money100 * 100));
+                    }
+                } else{
+                    int money20 = ((money%100)%50)/20;
+                    Bank.money20 -= money20;
+                    Bank.money50 -= money50;
+                    Bank.money100 -= money100;
+                    System.out.println("Операция выполнена успешно");
+                    System.out.println(" Купюр 20 рублей - " + " " + money20 + "; " + "Купюр 50 рублей - " + money50 +
+                            "; " + " " + "Купюр 100 рублей - " + " " + money100 + ".");
+                    System.out.println("В банке осталось - " + (Bank.money20 * 20 + Bank.money50 * 50 + Bank.money100 * 100));
+                }
             }
         }
     }
