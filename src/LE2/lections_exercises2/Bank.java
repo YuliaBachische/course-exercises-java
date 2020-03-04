@@ -9,7 +9,7 @@
 Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
  */
 package LE2.lections_exercises2;
-        import java.util.Scanner;
+import java.util.Scanner;
 
 class Bank {
     static int money20 = 100;
