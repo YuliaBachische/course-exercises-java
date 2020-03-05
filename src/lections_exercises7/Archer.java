@@ -14,7 +14,7 @@ public class Archer extends Hero {
     static int damage = 10;
     @Override
     public void attackEnemy(String enemyName) {
-        if(enemyName == "Zombie"){
+        if(enemyName.equals("Zombie")){
             System.out.println(name + " попадает во врага стрелой," + "наносит ему " + damage + " баллов урона");
             if (Zombie.isAlive()) {
                 System.out.println("У зомби осталось " + Zombie.takeDamage(damage) + " баллов здоровья");
