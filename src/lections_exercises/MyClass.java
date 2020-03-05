@@ -17,7 +17,7 @@ public class MyClass {
     public double MyClass(double a1, double b1){
         this.a1 = a1;
         this.b1 = b1;
-        double mul = a * b;
+        double mul = a1 * b1;
         return mul;
     }
     public int MyClass(int a, int b){
