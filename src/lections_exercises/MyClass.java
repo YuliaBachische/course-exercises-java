@@ -14,6 +14,8 @@ public class MyClass {
     int b;
     double a1;
     double b1;
+    BigDecimal s;
+    BigDecimal t;
     public double MyClass(double a1, double b1){
         this.a1 = a1;
         this.b1 = b1;
