@@ -9,7 +9,6 @@ public class MyException extends Exception {
         if(num<0) throw new MyException();
         else return num*num;
     }
-
     public static void main(String[] args) {
         try {
             MyException.getPositiveResult(-8);
