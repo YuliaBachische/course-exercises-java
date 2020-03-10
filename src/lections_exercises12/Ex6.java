@@ -14,7 +14,6 @@ public class Ex6 {
             throw new ArithmeticException();
         }
     }
-
     public static void main(String[] args) {
         Ex6 ex = new Ex6();
         try {
@@ -27,5 +26,4 @@ public class Ex6 {
         Random random1 = new Random();
         return  random1.nextInt();
     }
-
 }
