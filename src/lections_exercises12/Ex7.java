@@ -12,7 +12,6 @@ public class Ex7 {
             throw new MyRuntimeException2("The number is not even");
         }
     }
-
     public static void main(String[] args) {
         Ex7 ex = new Ex7();
         try {
@@ -23,5 +22,4 @@ public class Ex7 {
             LOGGER.error("Test");
         }
     }
-
 }
