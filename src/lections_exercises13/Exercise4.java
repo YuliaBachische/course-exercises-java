@@ -18,5 +18,4 @@ public class Exercise4 {
         Exercise4 ex = new Exercise4();
         System.out.println(ex.getShortenName("Бачище", "Юлия", "Андреевна"));
     }
-
 }
