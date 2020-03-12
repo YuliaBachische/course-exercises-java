@@ -15,6 +15,6 @@ public class Exercise3 {
     public static void main(String[] args) {
         Exercise3 ex = new Exercise3();
         LOGGER.setLevel(Level.INFO);
-        LOGGER.info(ex.getStringAndAWord("Please, could you give me this keys, pleasE", "please"));
+        LOGGER.info(ex.getStringAndAWord("Please, could you give me this key, pleasE", "please"));
     }
 }
