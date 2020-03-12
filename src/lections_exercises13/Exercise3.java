@@ -12,12 +12,9 @@ public class Exercise3 {
     public boolean getStringAndAWord(String str, String word) {  //если без учета регистра
         return ((str.toLowerCase().startsWith(word.toLowerCase())) && (str.toLowerCase().endsWith(word.toLowerCase())));
     }
-
     public static void main(String[] args) {
         Exercise3 ex = new Exercise3();
         LOGGER.setLevel(Level.INFO);
-        LOGGER.info(ex.getStringAndAWord("please give a ten, pLease", "please"));
+        LOGGER.info(ex.getStringAndAWord("Please, could you give me this keys, pleasE", "please"));
     }
-
-
 }
