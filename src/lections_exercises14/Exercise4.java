@@ -24,6 +24,7 @@ public class Exercise4 {
             m = p.matcher(array[i]);
             if(m.find()){
                 array[i] = array[i].replaceAll(m.group(1), "\\(" + m.group(1) + "\\)");
+                array[i] = array[i].replaceAll(m.group(2), "\\-" + m.group(2) + "\\-");
                 LOGGER.setLevel(Level.INFO);
                 LOGGER.info(array[i]);
             }
