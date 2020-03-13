@@ -25,7 +25,6 @@ public class Exercise5 {
 
     private static Logger LOGGER = Logger.getLogger(Exercise5.class);
     private boolean isIPv4(String str) {
-        String []array = str.split("\\.");
         Pattern p = Pattern.compile("^(((0)|([1-9]\\d?)|(1\\d\\d)|(2[0-5]{2}))\\.){3}((0)|([1-9]\\d?)|(1\\d\\d)|(2[0-5]{2}))$");
         Matcher m = p.matcher(str);
         return m.matches();
