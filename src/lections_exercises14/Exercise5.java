@@ -22,7 +22,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Exercise5 {
-
     private static Logger LOGGER = Logger.getLogger(Exercise5.class);
     private boolean isIPv4(String str) {
         Pattern p = Pattern.compile("^(((0)|([1-9]\\d?)|(1\\d\\d)|(2[0-5]{2}))\\.){3}((0)|([1-9]\\d?)|(1\\d\\d)|(2[0-5]{2}))$");
