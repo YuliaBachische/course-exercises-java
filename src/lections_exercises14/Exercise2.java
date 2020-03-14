@@ -16,16 +16,12 @@ public class Exercise2 {
     private static Logger LOGGER = Logger.getLogger(Exercise2.class);
 
     public static void main(String[] args) {
-        String str = "0x5A 45 20 0x4a 0x11ff";
-        String [] array = str.split(" ");
-        Pattern p = Pattern.compile("\\b0x[A-Fa-f0-9]{1,4}\\b");
-        Matcher m;
-        for (int i = 0; i < array.length; i++) {
-            m = p.matcher(array[i]);
-            if (m.find()) {
-                LOGGER.setLevel(Level.INFO);
-                LOGGER.info(array[i]);
-            }
+        String str = "0x5A 45 20 0x4a 0x11ff 0x33";
+        Pattern p = Pattern.compile("(\\b0x[A-Fa-f0-9]{1,4}\\b)");
+        Matcher m = p.matcher(str);
+        while (m.find()){
+            LOGGER.setLevel(Level.INFO);
+            LOGGER.info(m.group());
         }
     }
 }
