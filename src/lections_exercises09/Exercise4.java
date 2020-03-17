@@ -34,7 +34,6 @@ public class Exercise4<T extends Number, V extends Number>{
     public double minusValuesDouble(){
         return t.doubleValue()-v.doubleValue();
     }
-    @Transaction
     public int minusValuesInt(){
         return t.intValue()-v.intValue();
     }
