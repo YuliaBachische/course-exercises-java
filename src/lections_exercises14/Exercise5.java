@@ -1,3 +1,18 @@
+/*
+.
+Написать метод, который проверяет, является ли строка адресомIPv4.
+Пример корректных IPv4
+0.0.0.0
+0.0.1.0
+255.0.0.1
+255.55.255.255
+192.168.0.1
+Не корректный
+001.0.0.0
+256.1.1.1
+1.1.1.1.
+-1.0.-1.1
+*/
 package lections_exercises14;
 
 import org.apache.log4j.Level;
@@ -7,10 +22,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Exercise5 {
-
     private static Logger LOGGER = Logger.getLogger(Exercise5.class);
     private boolean isIPv4(String str) {
-        String []array = str.split("\\.");
         Pattern p = Pattern.compile("^(((0)|([1-9]\\d?)|(1\\d\\d)|(2[0-5]{2}))\\.){3}((0)|([1-9]\\d?)|(1\\d\\d)|(2[0-5]{2}))$");
         Matcher m = p.matcher(str);
         return m.matches();
