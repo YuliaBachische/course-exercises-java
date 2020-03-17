@@ -23,7 +23,6 @@ public class ClassAnalyzer {
       analyzeFields(cls);
       analyzeConstructors(cls);
       analyzeTransactions(cls);
-
     }
     public void analyze(Object obj) {
         System.out.println(obj.getClass());
