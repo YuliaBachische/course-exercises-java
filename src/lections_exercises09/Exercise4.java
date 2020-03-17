@@ -1,3 +1,8 @@
+/*
+Из задания 5.3 реализовать класс вычислитель для вещественных и
+целых типов данных, используя
+параметризацию классов
+*/
 package lections_exercises09;
 
 public class Exercise4<T extends Number, V extends Number>{
