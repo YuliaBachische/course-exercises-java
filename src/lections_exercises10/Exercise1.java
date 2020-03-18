@@ -1,3 +1,8 @@
+/*
+Задание. Создать список оценок учеников с помощью ListIterator,
+заполнить случайными оценками. Удалить неудовлетворительные оценки
+из списка.
+ */
 package lections_exercises10;
 
 import org.apache.log4j.Level;
@@ -16,12 +21,6 @@ public class Exercise1 {
         ArrayList<Integer> listOfMarks = new ArrayList<>(Arrays.asList(nums));
         LOGGER.info("All marks: " + listOfMarks);
         ListIterator<Integer> numListIter = listOfMarks.listIterator();
-        while (numListIter.hasNext()) {
-            int n = numListIter.next();
-            if (n < 4) {
-                numListIter.remove();
-            }
-        }
         while (numListIter.hasNext()) {
             if (numListIter.next() < 4) {
                 numListIter.remove();
