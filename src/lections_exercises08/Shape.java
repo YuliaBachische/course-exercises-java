@@ -8,10 +8,10 @@ public interface Shape {
             super(sideA, sideB);
         }
         @Override
-        public  double areaOfShapeOfQuadrangle() {
-            return super.areaOfShapeOfQuadrangle();
+        public double areaOfShapeOfQuadrangle() {
+            return areaOfShapeOfQuadrangle();
         }
-        public double RectagleDiagonal(){
+        public double rectagleDiagonal(){
             return sqrt((sideA*sideA)+(sideB*sideB));
         }
 
@@ -23,11 +23,6 @@ public interface Shape {
     class Circle extends Sideless{
         public Circle(double radius) {
             super(radius);
-        }
-
-        @Override
-        public double areaOfShapeOfSideless() {
-            return super.areaOfShapeOfSideless();
         }
 
         @Override
@@ -61,10 +56,6 @@ public interface Shape {
             super(sideA, height);
         }
 
-        @Override
-        public  double areaOfShapeOfTriangle() {
-            return super.areaOfShapeOfTriangle();
-        }
 
         @Override
         public String toString() {
@@ -78,11 +69,6 @@ public interface Shape {
 
         public Square(double sideA) {
             super.sideA = sideA;
-        }
-
-        @Override
-        public  double areaOfShapeOfQuadrangle() {
-            return super.sideA*super.sideA;
         }
 
         @Override

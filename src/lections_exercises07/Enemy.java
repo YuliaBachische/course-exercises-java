@@ -11,7 +11,7 @@ isAlive в классе Enemy
 так, чтобы тот возвращал true,
 если количество здоровья врага больше 0
  */
-package lections_exercises7;
+package lections_exercises07;
 
 public class Enemy implements Mortal{
     static int health;
@@ -31,7 +31,7 @@ public class Enemy implements Mortal{
     public void attackEnemy(int damage) {
         this.takeDamage(damage);
     }
-    public static boolean isAlive() {
+    public boolean isAlive() {
         if(health>0){
             return true;
         }
@@ -43,7 +43,6 @@ public class Enemy implements Mortal{
         System.out.println(Enemy());
     }
     public String Enemy(){
-       String res = "Enemy атакует героя";
-       return res;
+        return  "Enemy атакует героя";
     }
 }

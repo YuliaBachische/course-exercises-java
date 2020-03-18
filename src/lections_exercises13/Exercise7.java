@@ -13,69 +13,83 @@ import org.apache.log4j.Logger;
 
 public class Exercise7 {
     private static Logger LOGGER = Logger.getLogger(Exercise7.class);
-    long num;
+    static long num;
     static String toString(long num) {
         return "" + num;
     }
-    public Exercise7(long num) {
-        this.num = num;
+    public  Exercise7(long num) {
+        Exercise7.num = num;
     }
-    public  StringBuilder getSymbolsFirstMethod(){   //первый способ
+
+    public  static StringBuilder getSymbolsFirstMethod(){   //первый способ
         StringBuilder res = new StringBuilder();
-        int length =10 - toString(num).toCharArray().length;
-        char [] chars = new char[length];
+        int length =10 - toString(num).length();
         if(length<10){
-            for(int i = 0; i < length; i++){
-                chars[i] = '0';
-                res.append(chars[i]);
-            }
-           res.append(toString(num));
-            return res;
+            res.append("0".repeat(Math.max(0, length)));
+           res.append(num);
         } else{
             res.append("0000000000");
-            return res;
         }
+        return res;
     }
-    public String getSymbolsSecondMethod(){          //второй способ
+    public static String getSymbolsSecondMethod(){          //второй способ
         int length =10 - toString(num).toCharArray().length;
         if (length>=0) {
             return String.format("%1$010d", num);
         }
         return "0000000000";
     }
-    public String getSymbolsThirdMethod(){            //третий способ
+    public static String getSymbolsThirdMethod(){            //третий способ
         String str = "";
-        int length =10 - toString(num).toCharArray().length;
-        char [] chars = new char[length];
+        int length =10 - toString(num).length();
         if(length<10){
             for(int i = 0; i < length; i++){
-                chars[i] = '0';
-                str += chars[i];
+                str += "0";
             }
             str+=toString(num);
             return str;
         }
         return "0000000000";
     }
+    public static StringBuffer getSymbolsFourthMethod(){            //третий способ
+        StringBuffer stringBuffer = new StringBuffer();
+        int length =10 - toString(num).length();
+        if(length<10){
+            stringBuffer.append("0".repeat(Math.max(0, length))) ;
+            stringBuffer.append(num);
+            return stringBuffer;
+        } else {
+            return stringBuffer.append("0000000000");
+        }
+    }
     public static void main(String[] args) {
         LOGGER.setLevel(Level.INFO);
-
         long startTime = System.currentTimeMillis();
-        Exercise7 ex = new Exercise7(6);
-        LOGGER.info(ex.getSymbolsFirstMethod());
+        for(int i = 0; i < 1000000; i++){
+            Exercise7.getSymbolsFirstMethod();
+        }
         long processTime = System.currentTimeMillis() - startTime;
         LOGGER.info(processTime + " ms");
 
-        long startTime2 = System.currentTimeMillis(); //второй способ самый быстрый
-        Exercise7 ex2 = new Exercise7(6);
-        LOGGER.info(ex2.getSymbolsSecondMethod());
+        long startTime2 = System.currentTimeMillis();
+        for(int i = 0; i < 1000000; i++){
+            Exercise7.getSymbolsSecondMethod();
+        }
         long processTime2 = System.currentTimeMillis()-startTime2;
         LOGGER.info(processTime2 + " ms");
 
         long startTime3 = System.currentTimeMillis();
-        Exercise7 ex3 = new Exercise7(6);
-        LOGGER.info(ex3.getSymbolsThirdMethod());
+        for(int i = 0; i < 1000000; i++){
+            Exercise7.getSymbolsThirdMethod();
+        }
         long processTime3 = System.currentTimeMillis()-startTime3;
         LOGGER.info(processTime3 + " ms");
+
+        long startTime4 = System.currentTimeMillis();
+        for(int i = 0; i < 1000000; i++){
+            Exercise7.getSymbolsFourthMethod();   // 4 способ самый быстрый
+        }
+        long processTime4 = System.currentTimeMillis()-startTime4;
+        LOGGER.info(processTime4 + " ms");
     }
 }

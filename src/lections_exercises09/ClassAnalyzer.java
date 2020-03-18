@@ -1,12 +1,3 @@
-/*
-Создать класс -анализатор ClassAnalyzer. Класс имеет перегруженный
-метод analyze(), принимающий объект типа
-Class или объект, отличный
-от него. Реализовать методы,
-которые анализируют структуру класса
-на предмет полей, методов, конструкторов и аннотаций всех типов для
-класса. Отчет выводится в консоль
-*/
 package lections_exercises09;
 
 import java.lang.annotation.Annotation;
@@ -23,6 +14,7 @@ public class ClassAnalyzer {
       analyzeFields(cls);
       analyzeConstructors(cls);
       analyzeTransactions(cls);
+
     }
     public void analyze(Object obj) {
         System.out.println(obj.getClass());
@@ -61,21 +53,20 @@ public class ClassAnalyzer {
         System.out.println(stringBuilder);
 
     }
-    public static void analyzeTransactions(Class cls) {
-        for (Method method : cls.getDeclaredMethods()) {
-            for (Annotation annotation : method.getDeclaredAnnotations()) {
+    public static void analyzeTransactions(Class cls){
+        for(Method method: cls.getDeclaredMethods()){
+            for(Annotation annotation: method.getDeclaredAnnotations()) {
                 if (annotation instanceof Transaction) {
                     System.out.println("Transaction is started");
                     try {
-                        Object obj = new ClassForTest(1, 1);
-                        ;
-                        method.invoke(obj, 4);
+                            Object obj = new ClassForTest(1,1);;
+                            method.invoke(obj, 4);
                     } catch (IllegalArgumentException | InvocationTargetException | IllegalAccessException e) {
-                        e.printStackTrace();
+                            e.printStackTrace();
+                        }
+                        System.out.println("Transaction is ended");
                     }
-                    System.out.println("Transaction is ended");
                 }
             }
         }
-    }
 }

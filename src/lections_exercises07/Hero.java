@@ -5,7 +5,7 @@
 что герой атакует врага.
 Сделать класс Hero и его метод attackEnemy абстрактными
 */
-package lections_exercises7;
+package lections_exercises07;
 
 public abstract class Hero {
     static String name;

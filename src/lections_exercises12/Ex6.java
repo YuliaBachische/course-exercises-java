@@ -1,3 +1,8 @@
+/*
+Создать метод случайным образом выбрасывающий одно из 3-х видов
+исключений.
+Вызвать этот метод в блоке try-catch, отлавливающем любое из 3-х
+ */
 package lections_exercises12;
 
 import java.io.IOException;
@@ -10,7 +15,7 @@ public class Ex6 {
             throw new IOException();
         } if(random%3==0){
             throw  new CloneNotSupportedException();
-        } if(random%5==0){
+        } else {
             throw new ArithmeticException();
         }
     }

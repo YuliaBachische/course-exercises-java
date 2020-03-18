@@ -1,9 +1,14 @@
 package lections_exercises08;
 
+import org.apache.log4j.Logger;
+
 import java.util.Scanner;
 
 public class Test {
+
+    private static Logger LOGGER = Logger.getLogger(Test.class);
     public static void main(String[] args) {
+        LOGGER.error("Test");
         Scanner sc = new Scanner(System.in);
         System.out.println("Выберите фигуру, над которой будут происходить действия: " + "\n" + "1.Квадрат" +
                 "\n" + "2.Прямоугольник" + "\n" + "3.Круг" + "\n" + "4.Эллипс " + "\n" + "5.Треугольник");
@@ -30,11 +35,11 @@ public class Test {
                         System.out.println("Площадь прямоугольника: " + rectangle.areaOfShapeOfQuadrangle());
                         break;
                     case 2:
-                        System.out.println("Диагональ прямоугольника: " + rectangle.RectagleDiagonal());
+                        System.out.println("Диагональ прямоугольника: " + rectangle.rectagleDiagonal());
                         break;
                     case 3:
                         System.out.println("Площадь прямоугольника: " + rectangle.areaOfShapeOfQuadrangle() + "\n" +
-                                "Диагональ прямоугольника: " + rectangle.RectagleDiagonal());
+                                "Диагональ прямоугольника: " + rectangle.rectagleDiagonal());
                         break;
                 }
                 }

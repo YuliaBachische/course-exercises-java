@@ -14,7 +14,7 @@ class Bank {
             numOperation = scanner.nextInt();
             switch (numOperation) {
                 case 1:
-                    System.out.println("Сколько вы хотите снять?");
+                    System.out.println("Сколько вы хотите снять(до 8000)?");
                     int numGetMoney = scanner.nextInt();
                     Bank.fromBank(numGetMoney);
                     break;

@@ -6,7 +6,7 @@ public class Excercise6 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число: ");
         int num = sc.nextInt();
-            if (IsSimple(num) == true) {
+            if (IsSimple(num)) {
                 System.out.println("Число является простым");
             } else {
                 System.out.println("Число не является простым");

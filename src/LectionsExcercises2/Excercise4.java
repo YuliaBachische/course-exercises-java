@@ -2,9 +2,7 @@ package LectionsExcercises2;
 
 import java.util.Random;
 
-import static java.lang.Math.*;
-
-public class Excercise4 {
+public class Excercise4<D extends Number, D1 extends Number> {
     public static void main(String[]args) {
         int[] array = new int[3];
         for (int i = 0; i < array.length; i++) {
@@ -21,7 +19,6 @@ public class Excercise4 {
     }
     private static int Random() {
         Random rand = new Random();
-        int rand1 = 10 + rand.nextInt(100 - 10);
-        return rand1;
+        return 10 + rand.nextInt(100 - 10);
     }
 }

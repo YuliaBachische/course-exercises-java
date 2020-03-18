@@ -1,3 +1,8 @@
+/*
+Объявите переменную со значением null. Вызовите метод у этой
+переменной.
+Отловите возникшее исключение.
+ */
 package lections_exercises12;
 
 import org.apache.log4j.Logger;

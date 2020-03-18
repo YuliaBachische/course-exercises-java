@@ -6,33 +6,41 @@
 Переопределить метод в подклассах Warrior,Mage и
 Archer так, чтобы каждый герой наносил врагу разное количество урона.
  */
-package lections_exercises7;
+package lections_exercises07;
 
-public class Archer extends Hero {
+public class Warrior extends Hero {
     static String name;
-    static int health=110;
-    static int damage = 10;
+    static int health = 150;
+    int damage = 30;
+
+    @Override
+    public String getName(String name) {
+        this.name = name;
+        return name;
+    }
     @Override
     public void attackEnemy(String enemyName) {
-        if(enemyName.equals("Zombie")){
-            System.out.println(name + " попадает во врага стрелой," + "наносит ему " + damage + " баллов урона");
-            if (Zombie.isAlive()) {
-                System.out.println("У зомби осталось " + Zombie.takeDamage(damage) + " баллов здоровья");
+        if (enemyName.equals("Zombie")) {
+            System.out.println(name + " пронзает клинком врага," + " наносит ему " + damage + " баллов урона");
+            if (Zombie.health>=0) {
+                System.out.println("У зомби остается " + Zombie.takeDamage(damage) + " баллов здоровья");
             } else {
                 System.out.println("Зомби мертв");
             }
         } else {
-            System.out.println(name + " попадает во врага стрелой," + "наносит ему " + damage + " баллов урона");
-            if (Dragon.isAlive()) {
-                System.out.println("У дракона осталось " + Dragon.takeDamage(damage) + " баллов здоровья");
+            System.out.println(name + " пронзает клинком врага," + " наносит ему " + damage + " баллов урона");
+            if (Dragon.health>=0) {
+                System.out.println("У дракона остается " + Dragon.takeDamage(damage) + " баллов здоровья");
             } else {
                 System.out.println("Дракон мертв");
             }
+
         }
     }
+
     @Override
     public void attackEnemy(String enemyName, String enemyName2) {
-        System.out.println("Стрелок " + name + " пускает в зомби стрелу, второй стрелой попадает дракону в глаз");
+        System.out.println("Воин " + name + " протыкает мечом зомби насквозь, затем задевает дракона");
         if (Zombie.health>=0) {
             System.out.println("У зомби остается " + Zombie.takeDamage(damage) + " баллов здоровья");
         } else {
@@ -40,17 +48,17 @@ public class Archer extends Hero {
         }
         if (Dragon.health>=0) {
             System.out.println("У дракона остается " + Dragon.takeDamage(damage) + " баллов здоровья");
-        } else{
+        } else {
             System.out.println(" Дракон мертв");
         }
     }
-    public Archer(String name) {
+    public Warrior(String name) {
         this.name = name;
     }
     public static int takeDamage(int damage) {
-        return health -=damage;
+        return health -= damage;
     }
-    public static boolean isArcherAlive(){
+    public static boolean isWarriorAlive(){
         if(health>0){
             return true;
         }

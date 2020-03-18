@@ -1,5 +1,7 @@
 package lections_exercises;
 
+import lections_exercises09.Transaction;
+
 public class Time {
     public int sec;
     public int min;
@@ -8,16 +10,17 @@ public class Time {
         Time sec = new Time(8, 8, 8);
         sec.showSec();
     }
-    public  void showTime() {
+    @Transaction
+    public  void showTime(int sec, int min, int hour) {
         System.out.println("Часы: " + hour + " " + " Минуты: " + min + " " + " " + "Секунды: " + sec);
     }
 
-    public Time(int sec, int min, int hour){
-        this.min = sec/60;
-        this.hour = min/60;
+    public Time(int sec, int min, int hour) {
+        this.min = sec / 60;
+        this.hour = min / 60;
         this.sec = sec;
-        this.min = min*60;
-        this.hour = hour*3600;
+        this.min = min * 60;
+        this.hour = hour * 3600;
     }
     public void showSec(){
         System.out.println(min + hour + sec);

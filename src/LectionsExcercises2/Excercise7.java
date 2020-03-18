@@ -14,4 +14,5 @@ public class Excercise7 {
         System.out.println("Факториал числа: ");
         System.out.println(mul);
     }
+
 }

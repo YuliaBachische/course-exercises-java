@@ -8,14 +8,14 @@ public class Archer extends Hero {
     public void attackEnemy(String enemyName) {
         if(enemyName == "Zombie"){
             System.out.println(name + " попадает во врага стрелой," + "наносит ему " + damage + " баллов урона");
-            if (Zombie.isAlive()) {
+            if (Zombie.health>0) {
                 System.out.println("У зомби осталось " + Zombie.takeDamage(damage) + " баллов здоровья");
             } else {
                 System.out.println("Зомби мертв");
             }
         } else {
             System.out.println(name + " попадает во врага стрелой," + "наносит ему " + damage + " баллов урона");
-            if (Dragon.isAlive()) {
+            if (Dragon.health>0) {
                 System.out.println("У дракона осталось " + Dragon.takeDamage(damage) + " баллов здоровья");
             } else {
                 System.out.println("Дракон мертв");
