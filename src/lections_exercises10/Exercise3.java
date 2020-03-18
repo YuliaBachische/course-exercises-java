@@ -1,3 +1,6 @@
+/*
+Вывести учеников из списка в обратном порядке. (2 варианта решения)
+ */
 package lections_exercises10;
 
 import org.apache.log4j.Level;
@@ -19,12 +22,12 @@ public class Exercise3 {
         LOGGER.info("List of students: " + listOfStudents);
         ListIterator<String> numListIter = listOfStudents.listIterator(listOfStudents.size());
         StringBuilder str1 = new StringBuilder();
-        while (numListIter.hasPrevious()){
+        while (numListIter.hasPrevious()){                                               //first option
             str1.append(numListIter.previous()).append(" ");
         }
         LOGGER.info("The solution via method previous, cycle while and StringBuilder: " + "\n" + str1);
         StringBuilder str = new StringBuilder();
-        for (int i = listOfStudents.size()-1; i >= 0; i--) {    //first option
+        for (int i = listOfStudents.size()-1; i >= 0; i--) {                              //second option
             str.append(listOfStudents.get(i)).append(" ");
         }
         LOGGER.info("The solution via cycle for and StringBuilder: " + "\n" + str);
