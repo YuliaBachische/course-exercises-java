@@ -2,9 +2,9 @@
 Ввести с консоли число, занести его цифры в стек. Стек – самостоятельно
 спроектированный класс, поддерживающий
 3 операции:
-1.Задать размер стека
-2.Внести цифру в стек.
-3.Извлечь цифру из стека.
+1.)Задать размер стека
+2.)Внести цифру в стек.
+3.) Извлечь цифру из стека.
 Вывести число, у которого цифры идут в обратном порядке
  */
 package lections_exercises10;
@@ -23,13 +23,11 @@ public class Stack {
         char[] chars = num.toCharArray();
         for (char aChar : chars) {
             numbers.add(aChar);
-            size++;
         }
     }
-    public StringBuilder pop(String num){
-        char[] chars = num.toCharArray();
+    public StringBuilder pop(){
         StringBuilder str = new StringBuilder();
-        for (int i = 1; i <=chars.length; i++) {
+        for (int i = 1; i <=numbers.size(); i++) {
             str.append(numbers.get(numbers.size() - i));
         }
         return str;
@@ -45,6 +43,6 @@ public class Stack {
         Stack stack = new Stack();
         stack.push(enteredNumber);
         LOGGER.setLevel(Level.INFO);
-        LOGGER.info(stack.pop(enteredNumber));
+        LOGGER.info(stack.pop());
     }
 }
