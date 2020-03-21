@@ -1,3 +1,13 @@
+/*
+ Написать метод isUnique, который принимает Map<String, String>
+и возвращает true,
+если два различных ключа не соответствуют двум одинаковым
+значениям.
+Например, в данном случае вернётся true:
+{Marty=Stepp, Stuart=Reges, Jessica=Miller, Amanda=Camp,
+Hal=Perkins}А в данном - false:{Kendrick=Perkins, Stuart=Reges, Jessica=Miller, Bruce=Reges,
+Hal=Perkins}
+*/
 package lections_exercises10_2;
 
 import lections_exercises10.Exercise3;
