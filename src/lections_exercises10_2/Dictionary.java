@@ -1,3 +1,6 @@
+/*
+Имеется текст. Следует составить для него частотный словарь
+*/
 package lections_exercises10_2;
 
 import org.apache.log4j.Level;
