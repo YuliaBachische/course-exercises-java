@@ -1,11 +1,11 @@
 /*
-Ввести с консоли число, занести его цифры в стек. Стек – самостоятельно
-спроектированный класс, поддерживающий
-3 операции:
-1.)Задать размер стека
-2.)Внести цифру в стек.
-3.) Извлечь цифру из стека.
-Вывести число, у которого цифры идут в обратном порядке
+Р’РІРµСЃС‚Рё СЃ РєРѕРЅСЃРѕР»Рё С‡РёСЃР»Рѕ, Р·Р°РЅРµСЃС‚Рё РµРіРѕ С†РёС„СЂС‹ РІ СЃС‚РµРє. РЎС‚РµРє вЂ“ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ
+СЃРїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРЅС‹Р№ РєР»Р°СЃСЃ, РїРѕРґРґРµСЂР¶РёРІР°СЋС‰РёР№
+3 РѕРїРµСЂР°С†РёРё:
+1.)Р—Р°РґР°С‚СЊ СЂР°Р·РјРµСЂ СЃС‚РµРєР°
+2.)Р’РЅРµСЃС‚Рё С†РёС„СЂСѓ РІ СЃС‚РµРє.
+3.) РР·РІР»РµС‡СЊ С†РёС„СЂСѓ РёР· СЃС‚РµРєР°.
+Р’С‹РІРµСЃС‚Рё С‡РёСЃР»Рѕ, Сѓ РєРѕС‚РѕСЂРѕРіРѕ С†РёС„СЂС‹ РёРґСѓС‚ РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
  */
 package lections_exercises10;
 
@@ -23,13 +23,11 @@ public class Stack {
         char[] chars = num.toCharArray();
         for (char aChar : chars) {
             numbers.add(aChar);
-            size++;
         }
     }
-    public StringBuilder pop(String num){
-        char[] chars = num.toCharArray();
+    public StringBuilder pop(){
         StringBuilder str = new StringBuilder();
-        for (int i = 1; i <=chars.length; i++) {
+        for (int i = 1; i <=numbers.size(); i++) {
             str.append(numbers.get(numbers.size() - i));
         }
         return str;
@@ -45,6 +43,6 @@ public class Stack {
         Stack stack = new Stack();
         stack.push(enteredNumber);
         LOGGER.setLevel(Level.INFO);
-        LOGGER.info(stack.pop(enteredNumber));
+        LOGGER.info(stack.pop());
     }
 }
