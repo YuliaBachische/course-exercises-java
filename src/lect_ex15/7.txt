@@ -1,0 +1,28 @@
+;2_01sesicrexe_snoitcel egakcap
+
+;leveL.j4gol.ehcapa.gro tropmi
+;reggoL.j4gol.ehcapa.gro tropmi
+
+;paMhsaH.litu.avaj tropmi
+;paM.litu.avaj tropmi
+
+{ yranoitciD ssalc cilbup
+;)ssalc.yranoitciD(reggoLteg.reggoL = REGGOL reggoL citats etavirp    
+{ )sgra ][gnirtS(niam diov citats cilbup    
+;)OFNI.leveL(leveLtes.REGGOL        
+;)(><paMhsaH wen = paMym >regetnI ,gnirtS<paM        
+;".rohtua ralucitrap fo skoob ro koob emos ni desu sdrow osla ,egaugnal emos fo sdrow eht lla fo ytilatot a si yranoitcid ehT" = rts gnirtS        
+;)"" ,"] ^9-0Z-Az-a^["(llAecalper.)(esaCrewoLot.rts = rts                
+;)" "(tilps.rts = yarra ][ gnirtS        
+{ )yarra : s gnirtS( rof        
+{))s(yeKsniatnoc.paMym(fi            
+;)1+)s(teg.paMym ,s(tup.paMym                
+{ esle}            
+;)1 ,s(tup.paMym                
+}            
+}        
+{ ))(teSyek.paMym :yek gnirtS( rof        
+;)"}" + )yek(teg.paMym + " : " + yek + "{"(ofni.REGGOL            
+}        
+}    
+}
