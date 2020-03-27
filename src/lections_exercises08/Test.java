@@ -11,7 +11,7 @@ public class Test {
         LOGGER.error("Test");
         Scanner sc = new Scanner(System.in);
         System.out.println("Выберите фигуру, над которой будут происходить действия: " + "\n" + "1.Квадрат" +
-                "\n" + "2.Прямоугольник" + "\n" + "3.Круг" + "\n" + "4.Эллипс " + "\n" + "5.Треугольник");
+                "\n" + "2.Прямоугольник" + "\n" + "3.Круг" + "\n" + "4.Эллипс " + "\n" + "5.yaml.Треугольник");
         int num = sc.nextInt();
         switch (num){
             case 1:

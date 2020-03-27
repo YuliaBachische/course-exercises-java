@@ -39,7 +39,7 @@ public class Exercise5 {
         LOGGER.info(ex.isIPv4("192.168.0.1.4"));
         LOGGER.info(ex.isIPv4("256.1.1.1"));
         LOGGER.info(ex.isIPv4("001.0.0.0"));
-        LOGGER.info(ex.isIPv4("255.55.255.255"));
+        LOGGER.info(ex.isIPv4("255.055.255.255"));
 
     }
 }

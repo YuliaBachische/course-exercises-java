@@ -1,5 +1,5 @@
 /*
-Из задания 5.3 реализовать класс вычислитель для вещественных и
+Из задания 5.yaml.3 реализовать класс вычислитель для вещественных и
 целых типов данных, используя
 параметризацию классов
 */
@@ -48,7 +48,6 @@ public class Exercise4<T extends Number, V extends Number>{
     public int divValuesInt(){
         return t.intValue()/v.intValue();
     }
-
     public static void main(String[] args) {
         Exercise4<Integer, Integer> f = new Exercise4<>(4, 4);
         System.out.println(f.plusValuesDouble());

@@ -11,14 +11,14 @@ public class Exercise1 {
         LOGGER.setLevel(Level.INFO);
         long start = System.currentTimeMillis();
         int c = 0;
-        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/lect_ex16/BufferedReader.txt")));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("src/lect_ex16/BufferedWriter.txt")));
-        while ((c = br.read()) != -1) {
-            bw.write((char) c);
+        BufferedInputStream bufferedInputStream = new BufferedInputStream( new FileInputStream("src/lect_ex16/BufferedReader.txt"));
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream("src/lect_ex16/BufferedWriter.txt"));
+        while ((c = bufferedInputStream.read()) != -1) {
+            bufferedOutputStream.write((char) c);
         }
-        br.close();
-        bw.close();
         long finish = System.currentTimeMillis();
+        bufferedInputStream.close();
+        bufferedOutputStream.close();
         LOGGER.info("Buffered IO: " + (finish - start) + " ms");
         long start2 = System.currentTimeMillis();
         int c2 = 0;

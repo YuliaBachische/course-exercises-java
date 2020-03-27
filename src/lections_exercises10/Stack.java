@@ -1,11 +1,11 @@
 /*
-Ввести с консоли число, занести его цифры в стек. Стек – самостоятельно
-спроектированный класс, поддерживающий
-3 операции:
-1.)Задать размер стека
-2.)Внести цифру в стек.
-3.) Извлечь цифру из стека.
-Вывести число, у которого цифры идут в обратном порядке
+������ � ������� �����, ������� ��� ����� � ����. ���� � ��������������
+���������������� �����, ��������������
+3 ��������:
+1.)������ ������ �����
+2.)������ ����� � ����.
+3.) ������� ����� �� �����.
+������� �����, � �������� ����� ���� � �������� �������
  */
 package lections_exercises10;
 
@@ -17,20 +17,18 @@ import java.util.Scanner;
 
 public class Stack {
     private static Logger LOGGER = Logger.getLogger(Stack.class);
-    static ArrayList<Character> numbers = new ArrayList<>();
+    static ArrayList<Integer> numbers = new ArrayList<>();
     int size = numbers.size();
     public void push(String num) {
         char[] chars = num.toCharArray();
         for (char aChar : chars) {
-            numbers.add(aChar);
+            numbers.add(Integer.parseInt(String.valueOf(aChar)));
         }
     }
-    public StringBuilder pop(){
-        StringBuilder str = new StringBuilder();
-        for (int i = 1; i <=numbers.size(); i++) {
-            str.append(numbers.get(numbers.size() - i));
-        }
-        return str;
+    public int pop(){
+       int res = numbers.get(numbers.size()-1);
+       numbers.remove(numbers.size()-1);
+       return res;
     }
     public void setSize(int num){
         this.size = num;

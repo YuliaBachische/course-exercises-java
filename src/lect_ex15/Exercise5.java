@@ -7,8 +7,8 @@ import java.io.*;
 
 public class Exercise5{
     private static Logger LOGGER = Logger.getLogger(Exercise5.class);
-    static DataOutputStream dos;
-    static {
+     DataOutputStream dos;
+       {
         try {
             dos = new DataOutputStream(new FileOutputStream("src/lect_ex15/5.dat"));
         } catch (FileNotFoundException e) {
@@ -33,6 +33,7 @@ public class Exercise5{
             exercise5.writeInt(num);
             sum += num;
         }
+        exercise5.dos.close();
         InputStream inputStream = new FileInputStream("src/lect_ex15/5.dat");
         DataInputStream reader = new DataInputStream(inputStream);
         StringBuilder stringBuilder1 = new StringBuilder();
@@ -42,7 +43,6 @@ public class Exercise5{
         LOGGER.info(stringBuilder);
         LOGGER.info(stringBuilder1);
         LOGGER.info(sum/nums.length);
-        dos.close();
         reader.close();
     }
 }

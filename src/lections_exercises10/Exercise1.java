@@ -32,5 +32,4 @@ public class Exercise1 {
         Random random = new Random();
         return random.nextInt(10);
     }
-
 }
