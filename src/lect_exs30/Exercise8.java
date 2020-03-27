@@ -20,7 +20,6 @@ public class Exercise8 implements TemporalAdjuster {
     public Temporal adjustInto(Temporal temporal) {
         if(localDate.getMonthValue()<=6){
             return temporal.with(TemporalAdjusters.firstDayOfYear());
-
         }
         return temporal.with(TemporalAdjusters.firstDayOfNextYear());
     }
