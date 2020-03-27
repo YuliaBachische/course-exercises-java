@@ -1,3 +1,8 @@
+/*
+Написать свою реализацию интерфейса
+TemporalAdjuster, которая бы изменяла дату на ближайшее (в
+днях) 1 января
+*/
 package lect_exs30;
 
 import org.apache.log4j.Level;
