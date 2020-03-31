@@ -1,3 +1,7 @@
+/*
+Написать свою реализацию интерфейса TemporalAdjuster,
+которая бы прибавляла к дате 42 дня
+*/
 package lect_exs30;
 
 import org.apache.log4j.Level;

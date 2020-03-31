@@ -1,3 +1,8 @@
+/*
+Написать свою реализацию интерфейса
+TemporalAdjuster, которая бы изменяла дату на ближайшее (в
+днях) 1 января
+*/
 package lect_exs30;
 
 import org.apache.log4j.Level;
@@ -20,7 +25,6 @@ public class Exercise8 implements TemporalAdjuster {
     public Temporal adjustInto(Temporal temporal) {
         if(localDate.getMonthValue()<=6){
             return temporal.with(TemporalAdjusters.firstDayOfYear());
-
         }
         return temporal.with(TemporalAdjusters.firstDayOfNextYear());
     }
