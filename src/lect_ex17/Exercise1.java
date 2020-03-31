@@ -1,23 +1,16 @@
 package lect_ex17;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Exercise1 {
     public static void main(String[] args) {
-        Integer[] array = new Integer[100];
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < array.length; i++) {
-            list.add(i);
-        }
-        int sum = 0;
-        int count = 0;
-        for (Integer integer : list) {
-            if ((integer % 2 != 0) && (integer % 5 == 0)) {
-                sum += integer;
-                count++;
-            }
-        }
-        System.out.println(sum/count);
+        List<Integer> list = Arrays.asList(15, 5, 8, 12, 25);
+        double result = list.stream()
+                .filter((number) -> number!=null && number%2!=0 && number%5==0)
+                .mapToLong(num -> num)
+                .average()
+                .orElse(0);
+        System.out.println(result);
     }
 }
