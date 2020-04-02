@@ -1,12 +1,12 @@
 package lect_ex18;
 
 public enum RequiredDetails{
-    Right_Leg,
-    Head,
-    Body,
-    Left_Leg,
-    Right_Hand,
-    Left_Hand,
+    RIGHT_LEG,
+    HEAD,
+    BODY,
+    LEFT_LEG,
+    RIGHT_HAND,
+    LEFT_HAND,
     CPU,
     RAM,
     HDD;
