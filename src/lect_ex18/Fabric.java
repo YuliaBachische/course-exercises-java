@@ -12,17 +12,9 @@ public class Fabric implements Runnable {
     public void run() {
         for (int i = 0; i < 50; i++) {
             if (i == 0) {
-                try {
-                    dump.throwDetails(throwG(20));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                dump.throwDetails(throwG(20));
             } else {
-                try {
-                    dump.throwDetails(throwG((int) (1 + Math.random() * 4)));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                dump.throwDetails(throwG((int) (1 + Math.random() * 4)));
             }
             try {
                 Thread.sleep(100);
@@ -35,8 +27,8 @@ public class Fabric implements Runnable {
     public Fabric(GarbageDump dump) {
         this.dump = dump;
     }
-    
-    public List<String> throwG(int count) throws InterruptedException {
+
+    public List<String> throwG(int count) {
         List<String> list = new ArrayList<>();
         for (int i = 0; i < count; i++) {
             list.add(throwRandomDetail(thrownDetails));
@@ -48,4 +40,5 @@ public class Fabric implements Runnable {
         return list.get((int) (0 + Math.random() * 9));
     }
 }
+
 
