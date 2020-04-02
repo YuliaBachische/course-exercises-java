@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Fabric implements Runnable {
+public class Factory implements Runnable {
     GarbageDump dump;
     List<String> thrownDetails = Arrays.asList("Left_Hand", "Right_Leg", "Left_Leg", "Head", "Body", "HDD" , "RAM", "Right_Hand", "CPU");
 
@@ -24,7 +24,7 @@ public class Fabric implements Runnable {
         }
     }
 
-    public Fabric(GarbageDump dump) {
+    public Factory(GarbageDump dump) {
         this.dump = dump;
     }
 
@@ -40,5 +40,7 @@ public class Fabric implements Runnable {
         return list.get((int) (0 + Math.random() * 9));
     }
 }
+
+
 
 
