@@ -35,8 +35,7 @@ public class Fabric implements Runnable {
     public Fabric(GarbageDump dump) {
         this.dump = dump;
     }
-
-
+    
     public List<String> throwG(int count) throws InterruptedException {
         List<String> list = new ArrayList<>();
         for (int i = 0; i < count; i++) {
