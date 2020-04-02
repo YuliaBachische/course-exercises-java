@@ -26,6 +26,7 @@ public class GarbageDump {
         available = true;
         notify();
     }
+    
     public synchronized void collectDetails(Map<String, Integer> map) {
         while (!available) {
             try {
