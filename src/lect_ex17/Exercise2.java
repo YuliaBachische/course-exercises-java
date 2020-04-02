@@ -1,3 +1,7 @@
+/*
+Дан список строк. Найти количество уникальных
+строк длиной более 8 символов
+*/
 package lect_ex17;
 
 import java.util.ArrayList;
@@ -12,7 +16,7 @@ public class Exercise2 {
         list.add("Property");
         list.add("Properties");
         long count = list.stream()
-                .filter((string) -> string.length() > 8)
+                .filter((string) ->string!=null && string.length() > 8)
                 .distinct()
                 .count();
         System.out.println(count);

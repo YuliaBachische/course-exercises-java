@@ -1,3 +1,10 @@
+/*
+Дан класс Person с полями
+firstName, lastName, age.
+Вывести полное имя самого старшего человека, у
+которого длина этого имени не превышает 15
+символов
+*/
 package lect_ex17;
 
 import java.util.ArrayList;
@@ -30,7 +37,7 @@ public class Person {
         list.add(person5);
         list.add(person6);
         String res = list.stream()
-                .filter(person -> (person.firstName.length() + person.lastName.length())<15)
+                .filter(person -> person.firstName!=null && person.lastName!=null && (person.firstName.length() + person.lastName.length())<15)
                 .max (Comparator.comparingInt(a -> a.age)).map(person -> person.firstName + " " + person.lastName).orElse("");
         System.out.println(res);
         }

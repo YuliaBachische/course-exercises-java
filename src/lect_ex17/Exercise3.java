@@ -1,3 +1,8 @@
+/*
+Дана Map<String, Integer>. Найти сумму всех
+значений, длина ключей
+которых меньше 7 символов.
+*/
 package lect_ex17;
 
 import java.util.HashMap;
@@ -13,7 +18,7 @@ public class Exercise3 {
         map.put("Seven", 7);
         int sum = map.entrySet()
                 .stream()
-                .filter(entry-> entry.getKey().length()<7)
+                .filter(entry-> entry.getValue()!=null && entry.getKey()!=null && entry.getKey().length()<7)
                 .mapToInt(Map.Entry:: getValue)
                 .sum();
         System.out.println(sum);
