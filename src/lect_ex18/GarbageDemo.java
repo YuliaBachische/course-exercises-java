@@ -21,7 +21,7 @@
 package lect_ex18;
 
 public class GarbageDemo {
-        public static void main(String[] args) throws InterruptedException {
+        public static void main(String[] args) {
             GarbageDump garbageDump = new GarbageDump();
             Scientist scientist = new Scientist(garbageDump);
             Fabric fabric = new Fabric(garbageDump);
