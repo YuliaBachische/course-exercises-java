@@ -27,6 +27,7 @@ public class MyThread extends Thread{
             }
         }
     }
+    
     public static long getSum() {
         return sum;
     }
