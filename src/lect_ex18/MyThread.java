@@ -2,6 +2,7 @@ package lect_ex18;
 
 public class MyThread extends Thread{
     public static long sum = 0;
+
     @Override
     public void run() {
         for(int i = 1; i < 10000000; i++){
@@ -11,31 +12,27 @@ public class MyThread extends Thread{
                 try {
                     Thread.sleep(10);
                 }catch (InterruptedException ex){
-                    System.out.println("The thread is interrupted");
+                    ex.printStackTrace();
                 }
             }
         }
     }
-    public long getSum() {
+    public static long getSum() {
         return sum;
     }
-    static class Daemon extends MyThread{
-        @Override
-        public void run() {
-            MyThread thread = new MyThread();
+
+    public static void main(String[] args) {
+        Thread thread = new Thread(new MyThread());
+        Thread daemonThread = new Thread(()->    {
             for(int i = 1; i < 10000000; i++){
-                System.out.println(thread.getSum());
+                System.out.println(MyThread.getSum());
                 try {
                     Thread.sleep(5);
                 } catch (InterruptedException e) {
-                    System.out.println("The daemon thread was interrupted");
+                    e.printStackTrace();
                 }
             }
-        }
-    }
-    public static void main(String[] args) {
-        Thread thread = new Thread(new MyThread());
-        Thread daemonThread = new Thread(new MyThread.Daemon());
+        });
         daemonThread.setDaemon(true);
         thread.start();
         daemonThread.start();
