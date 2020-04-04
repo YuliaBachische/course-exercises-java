@@ -26,6 +26,7 @@ public class GarbageDump {
         available = true;
         notify();
     }
+    
     public synchronized void collectDetails(Map<String, Integer> map) {
         while (!available) {
             try {
@@ -47,6 +48,9 @@ public class GarbageDump {
             if (map.size() == 9) {
                 System.out.println("In overall the Scientist made " + res + " robots");
             }
+            /*Можно было вывести только в конце результат - путем вынесения процесса отображения в консоль в отдельный метод,
+           создания поля и занесения его в метод collectDetails(). И только когда бы счетчик достиг последнего дня, вызвать метод,
+           выводящий результаты */
         }
     }
 }

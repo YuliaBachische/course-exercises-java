@@ -28,7 +28,7 @@ public class Scientist implements Runnable {
     public void collect() {
         for (int i = 0; i < dump.list.size(); i++) {
             for (RequiredDetails requiredDetails : RequiredDetails.values()) {
-                if (dump.list.get(i).equals(String.valueOf(requiredDetails))) {
+                if (dump.list.get(i).equalsIgnoreCase(String.valueOf(requiredDetails))) {
                     if (collectedDetails.containsKey(dump.list.get(i))) {
                         collectedDetails.put(dump.list.get(i), collectedDetails.get(dump.list.get(i)) + 1);
                         break;
