@@ -12,6 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Exercise2 {
     static int[] shared = new int[1000000];
+    
     public static void main(String[] args) {
         for (int i = 0; i < shared.length; i++) {
             shared[i] = (int) (Math.random()*300);
