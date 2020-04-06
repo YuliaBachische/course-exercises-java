@@ -1,3 +1,9 @@
+/*
+Задан массив случайных целых чисел (от 1 до 300) случайной длины (1 млн элементов).
+Найти максимальный элемент в массиве двумя способами: в
+одном потоке и используя 10 потоков.
+Сравнить затраченное в обоих случаях время
+*/
 package lect_exs20;
 
 import java.util.concurrent.ExecutorService;
@@ -14,8 +20,8 @@ public class Exercise2 {
         AtomicLong start = new AtomicLong();
         AtomicLong finish = new AtomicLong();
         service.submit(() -> {
-            start.set(System.nanoTime());
             int maxNumber = 0;
+            start.set(System.nanoTime());
             for (int value : shared) {
                 if (maxNumber < value) {
                     maxNumber = value;
@@ -29,15 +35,15 @@ public class Exercise2 {
         AtomicLong start2 = new AtomicLong();
         AtomicLong finish2 = new AtomicLong();
         executorService.submit(() -> {
-            start2.set(System.nanoTime());
             int maxNumber = 0;
+            start2.set(System.nanoTime());
             for (int value : shared) {
                 if (maxNumber < value) {
                     maxNumber = value;
                 }
             }
             finish2.set(System.nanoTime());
-            System.out.println("threadPool: " + (finish2.get() - start2.get()));
+            System.out.println("threadPool: " + (finish2.get() - start2.get())); //ThreadPool быстрее
         });
         executorService.shutdown();
     }
