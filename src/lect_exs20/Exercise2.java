@@ -41,6 +41,14 @@ public class Exercise2 {
                 }
             }
         }));
+        executorService.submit(new Thread(()->{
+            int maxNumber = 0;
+            for (int j = 100000; j < 200000; j++) {
+                if (maxNumber < shared[j]) {
+                    maxNumber = shared[j];
+                }
+            }
+        }));
         executorService.submit(new Thread(() -> {
             int maxNumber = 0;
             for (int j = 200000; j < 300000; j++) {
